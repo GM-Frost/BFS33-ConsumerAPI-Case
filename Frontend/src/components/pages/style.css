@@ -1,0 +1,9 @@
+body {
+  background-image: url(image/background.jpeg);
+}
+
+input:focus {
+  outline: none;
+  border-color: #8f4a6d;
+  box-shadow: 0 0 2px #8f4a6d;
+}
