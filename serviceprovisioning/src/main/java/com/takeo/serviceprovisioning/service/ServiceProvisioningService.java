@@ -30,7 +30,7 @@ public class ServiceProvisioningService {
 
     public ServiceProvisioning disableConnection(Long id) {
         ServiceProvisioning updatedConnection = repository.findById(id).orElse(null);
-        updatedConnection.setStatus("Disabled");
+        updatedConnection.setStatus("disable");
         repository.save(updatedConnection);
 
         return updatedConnection;
@@ -39,14 +39,14 @@ public class ServiceProvisioningService {
 
     public ServiceProvisioning holdConnection(Long id) {
         ServiceProvisioning updatedConnection = repository.findById(id).orElse(null);
-        updatedConnection.setStatus("Hold");
+        updatedConnection.setStatus("hold");
         repository.save(updatedConnection);
         return updatedConnection;
     }
 
     public ServiceProvisioning resumeConnection(Long id) {
         ServiceProvisioning updatedConnection = repository.findById(id).orElse(null);
-        updatedConnection.setStatus("Resumed");
+        updatedConnection.setStatus("resume");
         repository.save(updatedConnection);
         return updatedConnection;
     }

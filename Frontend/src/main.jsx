@@ -24,6 +24,7 @@ import ConsumerCustomerOrderEdit from "./components/APIpages/APIsubPages/Consume
 import EnterpriseCustomerOrderEdit from "./components/APIpages/APIsubPages/EnterpriseCustomerOrderEdit";
 import CatalogTable from "./components/APIpages/APIsubPages/CatalogTable";
 import CatalogEdit from "./components/APIpages/APIsubPages/CatalogEdit";
+import ServiceAll from "./components/APIpages/APIsubPages/ServiceAll";
 
 const router = createBrowserRouter([
   {
@@ -74,6 +75,10 @@ const router = createBrowserRouter([
   {
     path: "/api/enterprise/orders",
     element: <EnterpriseAllOrder />,
+  },
+  {
+    path: "/api/service/test-qos",
+    element: <ServiceAll />,
   },
   {
     path: "/api/consumer/customers/:customerID", // Parameterized URL

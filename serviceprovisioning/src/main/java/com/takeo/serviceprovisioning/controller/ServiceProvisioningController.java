@@ -3,6 +3,7 @@ package com.takeo.serviceprovisioning.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -33,6 +34,7 @@ public class ServiceProvisioningController {
     }
 
     @PostMapping("/provision")
+    @CrossOrigin(origins="*",allowedHeaders= {"Content-Type"})
     public String addProvision(@RequestBody ServiceProvisioning provision) {
         service.addProvision(provision);
 
@@ -41,23 +43,27 @@ public class ServiceProvisioningController {
     }
 
     @GetMapping("/test-qos")
+    @CrossOrigin(origins="*",allowedHeaders= {"Content-Type"})
     public List<ServiceProvisioning> qosTest() {
         return service.testService();
     }
 
     @PutMapping("/disable/{connectionId}")
+    @CrossOrigin(origins="*",allowedHeaders= {"Content-Type"})
     public String disableConnection(@PathVariable("connectionId") Long id) {
         service.disableConnection(id);
         return "connecttion disabled";
     }
 
     @PutMapping("/hold/{connectionId}")
+    @CrossOrigin(origins="*",allowedHeaders= {"Content-Type"})
     public String holdConnection(@PathVariable("connectionId") Long id) {
         service.holdConnection(id);
         return "connecttion hold";
     }
 
     @PutMapping("/resume/{connectionId}")
+    @CrossOrigin(origins="*",allowedHeaders= {"Content-Type"})
     public String resumeConnection(@PathVariable("connectionId") Long id) {
         service.resumeConnection(id);
         return "connecttion resumed";
